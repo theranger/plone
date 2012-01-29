@@ -1,0 +1,2 @@
+div.left, div.right { display: none; }
+div.content { margin: 10px!important; width: 640px; }
