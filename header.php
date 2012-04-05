@@ -5,6 +5,13 @@
 	<meta name="author" content="Ivari Horm" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 	<meta name="viewport" content="width=640" />
+	
+	<?php if(substr($_SERVER["SERVER_NAME"],strrpos($_SERVER["SERVER_NAME"], '.')+1) == "lan"): ?>
+		<script type="text/javascript">
+			var disqus_developer = 1;
+		</script>
+	<?php endif; ?>
+	
 	<title><?php
 	if (is_home()) {
 		bloginfo('name');
