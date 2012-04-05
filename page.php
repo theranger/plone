@@ -31,9 +31,11 @@
 			<?php echo $content; ?>
 		<?php endif; ?>
 		
-        <?php
-			$attachments = attachments_get_attachments();
-			$total_attachments = count($attachments);
+		<?php
+			if(function_exists("attachments_get_attachments")) {
+				$attachments = attachments_get_attachments();
+				$total_attachments = count($attachments);
+			}
 			if($total_attachments > 0):
 		?>
 		<div class="attachments">
