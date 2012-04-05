@@ -62,6 +62,7 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; margin-
 
 /* Disqus comment system cleanup */
 div#disqus_thread { float: left; width: 100%; margin-top: 100px; }
+div#disqus_thread li { display: block; }
 div#dsq-new-post { margin-top: -20px !important; }
 div#dsq-global-toolbar, div.dsq-options, div#dsq-comments-title, div.dsq-item-trackback { display: none !important; }
 div#dsq-sort-by, div#dsq-sort-by + h3, div#dsq-subscribe, div.dsq-trackback-url { display: none !important; }
