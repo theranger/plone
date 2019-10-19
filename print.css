@@ -1,8 +1,0 @@
-@import url("common.css");
-
-div.left, div.right, div.menu, div.attachments, div.bottom, div.search { display: none; }
-div#disqus_thread { display: none; }
-
-div.content { clear: both; }
-div.logo { margin: 0px 0px 20px 0px; float: right; }
-

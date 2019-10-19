@@ -1,81 +1,11 @@
-@CHARSET "UTF-8";
-
 /*
 Theme Name: RISK Plone Theme
 Theme URI: http://study.risk.ee/
 Description: The Plone-style Wordpress theme for RISK Study site
 Author: Ivari Horm
 Author URI: http://ivari.risk.ee/
-Version: 1.1
+Version: 2.0.0
 
 License: GPL
 */
-
-@import url("common.css");
-
-body { margin: 0; }
-
-/* Format article and pages archives/subcontent/categories lists properly */
-div.list h2 + p { margin: 5px 0px 0px 0px; }
-div.list h2 span.right { float: right; font-size: 0.7em; margin-top: 4px; }
-div.sparse { margin-bottom: 100px; }
-
-div.top { overflow: auto; }
-div.main { margin-top: 20px; overflow: auto; }
-div.bottom { margin-top: 20px; background-color: #dee7ec; border: 1px solid #8cacbb; padding: 10px; border-left: 0; border-right: 0; }
-div.left { float: left; margin-left: 10px; }
-div.right { float: right; margin-right: 10px; }
-
-/* Site logo */
-div.top div.bar { height: 15px; background-color: #dee7ec; border-bottom: 1px solid #8cacbb; }
-
-div.top div.search { float: right; margin-top: 80px; padding-right: 15px; }
-
-/* Main menu */
-div.menu { clear: both; }
-div.menu ul { border-bottom: 1px solid #8cacbb; margin: 0; padding: 0; }
-div.menu li { display: inline; border: 1px solid #8cacbb; margin-left: 20px; }
-div.menu a { text-decoration: none; color: #436976; padding: 0px 5px 0px 5px; }
-div.menu li.current_page_item, div.menu li.current_page_parent, div.menu li.current_page_ancestor { background-color: #dee7ec; border-bottom: 1px solid #dee7ec; }
-div.menu li:hover { background-color: #dee7ec; }
-
-/* Sidebar and widgets */
-div.sidebar { width: 200px; font-size: 0.9em; }
-div.widget { border: 1px solid #8cacbb; margin-bottom: 10px; padding-bottom: 10px; padding-left: 15px; }
-div.widget div.title { border-bottom: 1px solid #8cacbb; background-color: #dee7ec; margin-left: -15px; padding-left: 10px; margin-bottom: 10px; }
-div.widget ul { margin: 0px; padding-left: 10px; }
-
-/* Content */
-div.content { margin-left: 230px; margin-right: 230px; }
-div.content div.meta { margin-left: 20px; font-style: italic; margin-bottom: 20px; font-size: 0.85em; }
-
-/* Attachments */
-div.attachments { border: 1px solid #8cacbb; padding: 0px 5px 15px 15px; margin-top: 40px; }
-div.attachments div.title { font-size: 0.85em; display: inline; position: relative; top: -10px; left: 5px; padding: 0px 5px 0px 5px; background-color: #fff; }
-div.attachments ul { margin: 0; padding: 0; list-style-type: none; list-style-image: none;  overflow: auto; }
-div.attachments ul li { background-repeat: no-repeat; padding-left: 25px; margin-bottom: 10px; float: left; margin-right: 40px; }
-div.attachments ul li p { margin: 0; font-size: 0.8em; }
-
-/* Footer */
-div.footer { color: #666; font-size: 0.8em; overflow: auto; }
-
-/* Pages tree */
-div.pages_tree li.current_page_item a { color: #926102; text-decoration: none; }
-div.pages_tree li.current_page_item ul a { font-weight: normal; color: #436976; text-decoration: underline; }
-div.pages_tree ul { margin-top: 10px; }
-
-/* Calendar */
-div#calendar_wrap { margin: 5px; margin-left: 0px; }
-div#calendar_wrap table { width: 100%; }
-div#calendar_wrap td, div#calendar_wrap th { border:0; background-color: transparent; }
-
-/* Images placement */
-img.alignright { float: right; }
-img.aligncenter { display: block; margin-left: auto; margin-right: auto; margin-top: 10px; margin-bottom: 10px; }
-
-/* Disqus comment system cleanup */
-div#disqus_thread { float: left; width: 100%; margin-top: 100px; }
-div#disqus_thread li { display: block; }
-div#dsq-new-post { margin-top: -20px !important; }
-div#dsq-global-toolbar, div.dsq-options, div#dsq-comments-title, div.dsq-item-trackback { display: none !important; }
-div#dsq-sort-by, div#dsq-sort-by + h3, div#dsq-subscribe, div.dsq-trackback-url { display: none !important; }
+@import url("css/common.css");

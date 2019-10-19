@@ -1,15 +1,11 @@
-<?php get_header() ?>
-<?php the_post(); ?>
+<?php get_header(); ?>
 
-	<div class="content">
-		<h1><?php the_title(); ?></h1>
-		<div class="meta">By <?php the_author_link(); ?> at <?php the_time(get_option('date_format')); ?></div>
-		<?php if (function_exists("has_excerpt") && has_excerpt()): ?>
-			<div class="excerpt"><?php the_excerpt(); ?></div>
-		<?php endif;?>
-		<?php the_content(); ?>
-		
-		<?php comments_template(); ?> 
-	</div>
+<?php if (!have_posts()) : ?>
+	<?php get_template_part("templates/page", "notfound"); ?>
+<?php endif; ?>
 
-<?php get_footer() ?>
+<?php if (is_single()) while (have_posts()) : the_post(); ?>
+	<?php get_template_part("templates/" . get_post_type(), "index"); ?>
+<?php endwhile; ?>
+
+<?php get_footer(); ?>

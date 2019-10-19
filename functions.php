@@ -1,32 +1,26 @@
 <?php
 
-if(function_exists('register_sidebar')) register_sb();
+try {
+	spl_autoload_register(function ($class) {
+		@include_once TEMPLATEPATH . "/extensions/" . $class . ".class.php";
+	});
 
-
-function register_sb() {
-	register_sidebar(array(
-		'name' => 'Left Sidebar',
-		'id' => 'sidebar-left',
-		'before_widget' => '<div class="widget" id="%1$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="title">',
-		'after_title' => '</div>',
-	));
-	
-	register_sidebar(array(
-		'name' => 'Right Sidebar',
-		'id' => 'sidebar-right',
-		'before_widget' => '<div class="widget" id="%1$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="title">',
-		'after_title' => '</div>',
-	));
+	spl_autoload_register(function ($class) {
+		@include_once TEMPLATEPATH . "/widgets/" . $class . ".class.php";
+	});
+} catch (Exception $ex) {
+	die($ex->getMessage());
 }
 
+add_action("widgets_init", new PagesTree);
+add_action('widgets_init', new Sidebar);
+add_action("after_setup_theme", new CustomLogo(42, 234));
 
-//function new_excerpt_length($length) { return 20; }
-//add_filter('excerpt_length', 'new_excerpt_length');
 
-include(TEMPLATEPATH.'/plugins/pages_tree.php');
-define("SUBPAGE_NAVIGATION_SCRIPT",false);
-?>
+function get_image_url($image) {
+	return get_template_directory_uri() . "/images/" . $image;
+}
+
+function get_css_url($css) {
+	return get_template_directory_uri() . "/css/" . $css;
+}
