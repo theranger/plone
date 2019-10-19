@@ -1,6 +1,7 @@
 @import url("common.css");
 
 body {
+	margin-top: 1em;
 	display: grid;
 	grid-gap: 2vw 2vw;
 	grid-template-columns: 20vw auto 20vw;
@@ -8,6 +9,16 @@ body {
 
 body > header {
 	grid-column: 1/4;
+}
+
+body > header > span {
+	margin: 1em;
+	display: flex;
+	align-items: baseline;
+}
+
+body > header > span > .search {
+	margin-left: auto;
 }
 
 nav ul {

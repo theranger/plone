@@ -17,13 +17,13 @@
 
 <body <?php body_class(); ?>>
 <header>
-	<a href="<?php echo home_url(); ?>">
-		<?php the_custom_logo(); ?>
-	</a>
+	<span>
+		<a href="<?php echo home_url(); ?>"><?php the_custom_logo(); ?></a>
+		<span class="search"><?php get_search_form(); ?></span>
+	</span>
 	<nav>
 		<ul>
 			<?php wp_list_pages('depth=1&sort_column=menu_order&title_li='); ?>
 		</ul>
 	</nav>
-	<span class="search"><?php get_search_form(); ?></span>
 </header>
