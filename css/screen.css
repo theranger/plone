@@ -1,20 +1,31 @@
 @import url("common.css");
 
 body {
-	margin-top: 1em;
+	margin: 1em 0 0 0;
 	display: grid;
 	grid-gap: 2vw 2vw;
 	grid-template-columns: 20vw auto 20vw;
 }
 
-body > header {
+header {
 	grid-column: 1/4;
 }
 
-body > header > span {
+header > span {
 	margin: 1em;
 	display: flex;
-	align-items: baseline;
+	align-items: flex-end;
+}
+
+header span.logo {
+	text-transform: uppercase;
+	text-align: center;
+	font-style: italic;
+	color: #aaa377;
+}
+
+header span.logo p {
+	margin: 0;
 }
 
 body > header > span > .search {
@@ -38,10 +49,10 @@ nav ul li:hover {
 	background-color: #dee7ec;
 }
 
-nav a {
+nav li a {
 	text-decoration: none;
 	color: #436976;
-	padding: 0 5px 0 5px;
+	padding: 0.5em
 }
 
 nav li.current_page_item, nav li.current_page_parent, nav li.current_page_ancestor {
@@ -49,135 +60,58 @@ nav li.current_page_item, nav li.current_page_parent, nav li.current_page_ancest
 	border-bottom: 1px solid #dee7ec;
 }
 
-aside .widget {
-	border: 1px solid #8cacbb;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	padding-left: 15px;
-}
-
-
-/* Format article and pages archives/subcontent/categories lists properly */
-div.list h2 + p {
-	margin: 5px 0px 0px 0px;
-}
-
-div.list h2 span.right {
-	float: right;
-	font-size: 0.7em;
-	margin-top: 4px;
-}
-
-div.sparse {
-	margin-bottom: 100px;
-}
-
-div.top {
-	overflow: auto;
-}
-
-div.main {
-	margin-top: 20px;
-	overflow: auto;
-}
-
-div.bottom {
-	margin-top: 20px;
-	background-color: #dee7ec;
-	border: 1px solid #8cacbb;
-	padding: 10px;
-	border-left: 0;
-	border-right: 0;
-}
-
-div.left {
-	float: left;
-	margin-left: 10px;
-}
-
-div.right {
-	float: right;
-	margin-right: 10px;
-}
-
-/* Site logo */
-div.top div.bar {
-	height: 15px;
+nav.top {
 	background-color: #dee7ec;
 	border-bottom: 1px solid #8cacbb;
+	padding: 0.2em;
+	font-size: 0.9em;
+	min-height: 1.3em;
 }
 
-div.top div.search {
-	float: right;
-	margin-top: 80px;
-	padding-right: 15px;
+aside div.widget {
+	border: 1px solid #8cacbb;
+	margin: 0 1em 0 1em;
 }
 
-
-/* Sidebar and widgets */
-
-div.widget div.title {
+aside p.widget-title {
 	border-bottom: 1px solid #8cacbb;
 	background-color: #dee7ec;
-	margin-left: -15px;
+	margin: 0;
+}
+
+aside div.widget div {
+	padding: 0.5em;
+}
+
+aside div.widget ul {
 	padding-left: 10px;
-	margin-bottom: 10px;
+	margin: 0;
 }
 
-div.widget ul {
-	margin: 0px;
-	padding-left: 10px;
-}
-
-/* Content */
-div.content {
-	margin-left: 230px;
-	margin-right: 230px;
-}
-
-div.content div.meta {
-	margin-left: 20px;
-	font-style: italic;
-	margin-bottom: 20px;
-	font-size: 0.85em;
-}
-
-/* Attachments */
-div.attachments {
+div.wp-block-file {
 	border: 1px solid #8cacbb;
-	padding: 0px 5px 15px 15px;
-	margin-top: 40px;
-}
-
-div.attachments div.title {
-	font-size: 0.85em;
-	display: inline;
-	position: relative;
-	top: -10px;
-	left: 5px;
-	padding: 0px 5px 0px 5px;
+	display: flex;
+	padding: 0.5em;
 	background-color: #fff;
 }
 
-div.attachments ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	list-style-image: none;
-	overflow: auto;
+div.wp-block-file + div.wp-block-file {
+	border-top: 0;
+	margin-top: -1px;
+
 }
 
-div.attachments ul li {
-	background-repeat: no-repeat;
-	padding-left: 25px;
-	margin-bottom: 10px;
-	float: left;
-	margin-right: 40px;
+div.wp-block-file:hover {
+	background-color: #dee7ec;
 }
 
-div.attachments ul li p {
-	margin: 0;
-	font-size: 0.8em;
+div.wp-block-file > a:first-child {
+	display: list-item;
+	margin-left: 1em;
+}
+
+div.wp-block-file a.wp-block-file__button {
+	margin-left: auto;
 }
 
 /* Footer */
@@ -200,19 +134,6 @@ div#calendar_wrap table {
 div#calendar_wrap td, div#calendar_wrap th {
 	border: 0;
 	background-color: transparent;
-}
-
-/* Images placement */
-img.alignright {
-	float: right;
-}
-
-img.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 /* Disqus comment system cleanup */
