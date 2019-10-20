@@ -18,12 +18,18 @@
 <body <?php body_class(); ?>>
 <header>
 	<span>
-		<a href="<?php echo home_url(); ?>"><?php the_custom_logo(); ?></a>
+		<span class="logo">
+			<p><a href="<?php echo home_url(); ?>"><?php the_custom_logo(); ?></a></p>
+			<p><?php bloginfo("description"); ?></p>
+		</span>
 		<span class="search"><?php get_search_form(); ?></span>
 	</span>
 	<nav>
 		<ul>
 			<?php wp_list_pages('depth=1&sort_column=menu_order&title_li='); ?>
 		</ul>
+	</nav>
+	<nav class="top">
+		<?php if (is_active_sidebar("top")) dynamic_sidebar("top"); ?>
 	</nav>
 </header>

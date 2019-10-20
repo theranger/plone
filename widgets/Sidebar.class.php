@@ -18,13 +18,14 @@
 class Sidebar {
 
 	private static $beforeWidget = '<div id="%1$s" class="widget %2$s">';
-	private static $afterWidget = '</div>';
+	private static $afterWidget = '</div></div>';
 	private static $beforeTitle = '<p class="widget-title">';
-	private static $afterTitle = '</p>';
+	private static $afterTitle = '</p><div>';
 
 	function __invoke() {
 		$this->register("Left", "left", "Appears on the left side of screen.");
 		$this->register("Right", "right", "Appears on the right side of screen.");
+		$this->register("Top", "top", "Appears below main links.");
 	}
 
 	private function register($name, $id, $description) {
