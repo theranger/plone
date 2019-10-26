@@ -34,6 +34,8 @@ class PagesTree extends WP_Widget {
 	}
 
 	function widget($args, $inst) {
+		if ($inst["no_front"] && is_front_page()) return;
+
 		global $post;
 		$parents = get_post_ancestors($post->ID);
 		$k = count($parents);
@@ -72,6 +74,7 @@ class PagesTree extends WP_Widget {
 		$inst = $old_instance;
 		$inst["title"] = strip_tags($new_instance["title"]);
 		$inst["title_link"] = strip_tags($new_instance["title_link"]);
+		$inst["no_front"] = strip_tags($new_instance["no_front"]);
 		return $inst;
 	}
 
@@ -95,8 +98,21 @@ class PagesTree extends WP_Widget {
 					id="<?php echo $this->get_field_id("title_link"); ?>"
 				<?php echo $inst["title_link"] ? "checked" : ""; ?>
 			/>
-			<label for="<?php echo $this->get_field_id("title_link"); ?>">Link
-				title to parent page</label>
+			<label for="<?php echo $this->get_field_id("title_link"); ?>">
+				Link title to parent page
+			</label>
+		</p>
+
+		<p>
+			<input
+					type="checkbox"
+					name="<?php echo $this->get_field_name("no_front"); ?>"
+					id="<?php echo $this->get_field_id("no_front"); ?>"
+				<?php echo $inst["no_front"] ? "checked" : ""; ?>
+			/>
+			<label for="<?php echo $this->get_field_id("no_front"); ?>">
+				Hide in front page?
+			</label>
 		</p>
 
 		<?php
