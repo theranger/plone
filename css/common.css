@@ -1,11 +1,20 @@
 body { font-family: verdana, arial, helvetica, sans-serif; font-size: 0.8em; }
 
 a { color: #436976; }
-h1 { font-weight: normal; border-bottom: 1px solid #8cacbb; margin-top: 0px; font-size: 1.6em; }
+
+h1 {
+	font-weight: normal;
+	border-bottom: 1px solid #8cacbb;
+	margin-top: 0;
+	font-size: 1.6em;
+}
 h2 { font-size: 1.2em; border-bottom: 1px solid #ddd; margin-top: 40px; }
 h3 { font-size: 1.0em; margin-top: 30px; }
 h4 { font-size: 0.9em; font-style: italic; margin-top: 30px; }
-ul { list-style-type: square; list-style-image: url('images/bullet.gif'); }
+
+ul {
+	list-style-type: square;
+}
 li { margin-bottom: 0.8em; }
 pre { border: 1px solid #8cacbb; padding: 10px; background-color: #dee7ec; font-size: 1.1em; white-space:pre-wrap; line-height: 1.5em; }
 table { border-collapse: collapse; }
