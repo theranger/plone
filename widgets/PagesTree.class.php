@@ -18,13 +18,15 @@
 class PagesTree extends WP_Widget {
 
 	static $widget_name = "Pages Tree";
+	private $walker = null;
 
-	function __construct() {
+	function __construct($walker = null) {
 		$opts = array(
 			"description" => "Displays sub-pages of a current page."
 		);
 
 		parent::__construct(false, __(self::$widget_name), $opts);
+		$this->walker = $walker;
 	}
 
 	function __invoke() {
@@ -32,12 +34,11 @@ class PagesTree extends WP_Widget {
 	}
 
 	function widget($args, $inst) {
-		echo $args["before_widget"];
-
 		global $post;
 		$parents = get_post_ancestors($post->ID);
 		$k = count($parents);
 
+		echo $args["before_widget"];
 		echo $args["before_title"];
 		echo $this->get_title($parents[$k - 1], $inst);
 		echo $args["after_title"];
@@ -58,7 +59,13 @@ class PagesTree extends WP_Widget {
 	}
 
 	private function get_pages($post_id) {
-		return wp_list_pages('sort_column=menu_order&title_li=&echo=0&child_of=' . $post_id);
+		return wp_list_pages(array(
+			"sort_column" => "menu_order",
+			"title_li" => "",
+			"echo" => 0,
+			"walker" => $this->walker,
+			"child_of" => $post_id,
+		));
 	}
 
 	function update($new_instance, $old_instance) {
