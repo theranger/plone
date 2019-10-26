@@ -35,6 +35,7 @@ class PagesTree extends WP_Widget {
 
 	function widget($args, $inst) {
 		if ($inst["no_front"] && is_front_page()) return;
+		if ($inst["only_pages"] && !is_page()) return;
 
 		global $post;
 		$parents = get_post_ancestors($post->ID);
@@ -75,6 +76,7 @@ class PagesTree extends WP_Widget {
 		$inst["title"] = strip_tags($new_instance["title"]);
 		$inst["title_link"] = strip_tags($new_instance["title_link"]);
 		$inst["no_front"] = strip_tags($new_instance["no_front"]);
+		$inst["only_pages"] = strip_tags($new_instance["only_pages"]);
 		return $inst;
 	}
 
@@ -112,6 +114,18 @@ class PagesTree extends WP_Widget {
 			/>
 			<label for="<?php echo $this->get_field_id("no_front"); ?>">
 				Hide in front page?
+			</label>
+		</p>
+
+		<p>
+			<input
+					type="checkbox"
+					name="<?php echo $this->get_field_name("only_pages"); ?>"
+					id="<?php echo $this->get_field_id("only_pages"); ?>"
+				<?php echo $inst["only_pages"] ? "checked" : ""; ?>
+			/>
+			<label for="<?php echo $this->get_field_id("only_pages"); ?>">
+				Show only on pages
 			</label>
 		</p>
 
