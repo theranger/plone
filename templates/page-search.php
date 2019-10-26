@@ -1,8 +1,4 @@
-<aside>
-	<?php if (is_active_sidebar("left")) dynamic_sidebar("left"); ?>
-</aside>
-
-<main>
+<main class="two-columns">
 	<h1>Searching for <i><?php echo get_search_query(); ?></i></h1>
 	<header>
 		<span class="primary"><?php echo $wp_query->found_posts . __(" results"); ?></span>

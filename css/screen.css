@@ -68,6 +68,11 @@ nav.top {
 	min-height: 1.3em;
 }
 
+.two-columns {
+	grid-column: span 2;
+	margin-left: 1em;
+}
+
 aside div.widget {
 	border: 1px solid #8cacbb;
 	margin: 0 1em 1em 1em;
