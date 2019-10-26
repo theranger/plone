@@ -30,6 +30,7 @@ try {
 add_action("widgets_init", new PagesTree(new TreeWalker()));
 add_action('widgets_init', new Sidebar);
 add_action("after_setup_theme", new CustomLogo(42, 234));
+add_filter("render_block", new FileHeading, 10, 2);
 
 
 function get_image_url($image) {

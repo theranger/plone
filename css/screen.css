@@ -82,6 +82,7 @@ aside p.widget-title {
 	border-bottom: 1px solid #8cacbb;
 	background-color: #dee7ec;
 	margin: 0;
+	padding-left: 0.5em;
 }
 
 aside div.widget div {
@@ -89,8 +90,8 @@ aside div.widget div {
 }
 
 aside div.widget ul {
-	padding-left: 10px;
-	margin: 0;
+	padding-left: 0;
+	margin: 0 0 0 1.5em;
 }
 
 div.wp-block-file {
@@ -100,10 +101,13 @@ div.wp-block-file {
 	background-color: #fff;
 }
 
-div.wp-block-file + div.wp-block-file {
+div.wp-block-file + h2.wp-block-file {
+	display: none;
+}
+
+div.wp-block-file + h2.wp-block-file + div.wp-block-file {
 	border-top: 0;
 	margin-top: -1px;
-
 }
 
 div.wp-block-file:hover {
