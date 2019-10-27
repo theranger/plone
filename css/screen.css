@@ -105,7 +105,8 @@ div.wp-block-file + h2.wp-block-file {
 
 div.wp-block-file > a:first-child {
 	display: list-item;
-	margin-left: 0.5em;
+	margin-left: 2.7em;
+	list-style-type: square;
 }
 
 div.wp-block-file a.wp-block-file__button {
