@@ -95,32 +95,28 @@ aside div.widget ul {
 }
 
 div.wp-block-file {
-	border: 1px solid #8cacbb;
 	display: flex;
 	padding: 0.5em;
-	background-color: #fff;
 }
 
 div.wp-block-file + h2.wp-block-file {
 	display: none;
 }
 
-div.wp-block-file + h2.wp-block-file + div.wp-block-file {
-	border-top: 0;
-	margin-top: -1px;
-}
-
-div.wp-block-file:hover {
-	background-color: #dee7ec;
-}
-
 div.wp-block-file > a:first-child {
 	display: list-item;
-	margin-left: 1em;
+	margin-left: 0.5em;
 }
 
 div.wp-block-file a.wp-block-file__button {
 	margin-left: auto;
+	border: 1px solid #8cacbb;
+	text-decoration: none;
+	padding: 0.1em 0.2em 0.1em 0.2em;
+}
+
+div.wp-block-file a.wp-block-file__button:hover {
+	background-color: #dee7ec;
 }
 
 /* Footer */
