@@ -5,7 +5,11 @@
 <?php endif; ?>
 
 <?php if (is_page()) while (have_posts()) : the_post(); ?>
-	<?php if (count($children = get_children(array("post_type" => "page", "post_parent" => get_the_ID()))) > 0): ?>
+	<?php if (count($children = get_children(array(
+			"post_type" => "page",
+			"post_parent" => get_the_ID(),
+			"orderby" => "menu_order",
+			"order" => "ASC"))) > 0): ?>
 		<?php
 		set_query_var("children", $children);
 		get_template_part("templates/page", "listing");
